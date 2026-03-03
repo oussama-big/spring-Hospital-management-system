@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: H.S.M
+  
+  datasource:
+      url : your_url_here
+      username : your_username_here
+      password : your_password_here
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate # Important car on utilise Flyway pour gérer les tables
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+Security:
+  jwtSecret: "your_secret_here"
+  
+  # Access Token Expiration (e.g., 15 minutes = 900000 ms)
+  access-token-expiration-ms: 900000
+  # Refresh Token Expiration (e.g., 7 days = 604800000 ms)
+  refresh-token-expiration-ms: 604800000
+
+
+
+
